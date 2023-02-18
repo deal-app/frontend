@@ -5,13 +5,13 @@ import styles from '../styles.js';
 function MealDeal() {
     return (
         <View style={styles.container}>
-            <View style={[{flex: 6, flexDirection: 'row'}]}>
+            <View style={[{flex: 2, flexDirection: 'row'}]}>
                 <Image
                     style={styles.image}
                     source = {require('../images/dodo_image.jpeg')}
                 />
             </View>
-            <View style={[{flex: 2, flexDirection: 'row'}]}>
+            <View style={[{flex: 1, flexDirection: 'row'}]}>
                 <View style={{flex: 1}}>
                     <Text style={styles.text}>Dodo pietų pasiūlymas</Text>
                 </View>

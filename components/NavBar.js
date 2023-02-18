@@ -6,13 +6,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 // Screens
 import HomeScreen from './screens/HomeScreen'
 import DealsScreen from './screens/DealsScreen'
-import SettingsScreen from './screens/SettingsScreen'
+import RestaurantsScreen from './screens/RestaurantsScreen'
+import MapScreen from './screens/MapScreen'
 
 // Screen names
 
 const homeName = 'Home';
 const dealsName = 'Deals';
-const settingsName = 'Settings';
+const restaurantsName = 'Restaurants';
+const mapName = 'Map';
 
 const Tab = createBottomTabNavigator();
 
@@ -30,8 +32,10 @@ export default function MainContainer(){
                             iconName = focused ? 'home' : 'home-outline'
                         } else if (rn === dealsName) {
                             iconName = focused ? 'list' : 'list-outline'
-                        } else if (rn === settingsName) {
-                            iconName = focused ? 'settings' : 'settings-outline'
+                        } else if (rn === restaurantsName) {
+                            iconName = focused ? 'restaurant' : 'restaurant-outline'
+                        } else if (rn === mapName) {
+                            iconName = focused ? 'map' : 'map-outline'
                         }
 
                         return <Ionicons name={iconName} size={size} color={color}/>
@@ -41,7 +45,8 @@ export default function MainContainer(){
 
                 <Tab.Screen name={homeName} component={HomeScreen}/>
                 <Tab.Screen name={dealsName} component={DealsScreen}/>
-                <Tab.Screen name={settingsName} component={SettingsScreen}/>
+                <Tab.Screen name={restaurantsName} component={RestaurantsScreen}/>
+                <Tab.Screen name={mapName} component={MapScreen}/>
 
             </Tab.Navigator>
         </NavigationContainer>
