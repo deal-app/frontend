@@ -1,10 +1,13 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, NativeModules } from 'react-native';
 import MealDeal from './MealDeal'
+import { REACT_APP_IP_ADDRESS } from "@env"
 
 function MealDealsList(props){
     const [mealDeals, setMealDeals] = React.useState([])
-    const url = 'http://192.168.0.106:3000/api/meal-deals/' + props.restaurantID
+    const url = 'http://' + REACT_APP_IP_ADDRESS + ':3000/api/meal-deals/' + props.restaurantID
+
+    console.log(url)
 
     React.useEffect(() => {
         fetch(url, {method: 'GET'})

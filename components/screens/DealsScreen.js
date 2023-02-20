@@ -1,14 +1,19 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, NativeModules } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import MealDealsList from '../MealDealsList'
 import RestaurantName from '../RestaurantName';
+import { REACT_APP_IP_ADDRESS } from "@env"
+
 
 export default function DealsScreen({navigation}) {
     const [restaurants, setRestaurants] = React.useState([])
+    const url = 'http://' + REACT_APP_IP_ADDRESS + ':3000/api/restaurants'
+
+    console.log(url)
 
     React.useEffect(() => {
-        fetch('http://192.168.0.106:3000/api/restaurants', {method: 'GET'})
+        fetch(url, {method: 'GET'})
             .then(response => response.json())
             .then(data => {
                 setRestaurants(data.restaurants)    
