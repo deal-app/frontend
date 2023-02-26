@@ -27,7 +27,7 @@ function MealDealsList(props){
         return (
             <View>
                 { mealDeals.map(mealDeal => (
-                    <MealDeal
+                    <MealDeal style={{backgroundColor: 'black'}}
                         key = {mealDeal._id}
                         name = {mealDeal.name}
                         description = {mealDeal.description}

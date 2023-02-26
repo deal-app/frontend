@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { View, Text, NativeModules } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import MealDealsList from '../MealDealsList'
+import MealDealsList from '../MealDealsList';
 import RestaurantName from '../RestaurantName';
-import { REACT_APP_IP_ADDRESS } from "@env"
+import { REACT_APP_IP_ADDRESS } from "@env";
+import { LinearGradient } from 'expo-linear-gradient';
+import styles from '../../styles.js';
 
 
 export default function DealsScreen({navigation}) {
@@ -31,12 +33,12 @@ export default function DealsScreen({navigation}) {
         <ScrollView >
             { restaurants.map(restaurant => (
                 
-                <View key = {restaurant._id}>
-                    <RestaurantName name = {restaurant.name}/>
-                    
-                    <MealDealsList restaurantID = {restaurant._id.toString()}/>
-
-                </View>
+                    <View key = {restaurant._id}>
+                        
+                        <RestaurantName name = {restaurant.name}/>
+                        
+                        <MealDealsList restaurantID = {restaurant._id.toString()}/>
+                    </View>
             ))}
         </ScrollView>
     )

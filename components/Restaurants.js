@@ -3,7 +3,7 @@ import styles from '../styles.js';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
-function MealDeal(props) {
+function Restaurants(props) {
     return (
         
         <View>
@@ -11,19 +11,19 @@ function MealDeal(props) {
             <View style={[{flex: 2, flexDirection: 'row'}]}>
                 <Image
                     style={styles.image}
-                    source = {{uri: props.image}}
+                    /*source = {{uri: props.image}}*/
                 />
             </View>
             <View style={[{flex: 1, flexDirection: 'row'}]}>
                 <View style={{flex: 1}}>
-                    <Text style={styles.text}>{props.name}</Text>
+                    <Text style={styles.text}>Restorano pavadinimas</Text>
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
-                    <Text style={[styles.text, {textAlign: 'right'}]}>{props.price}</Text>
+                    <Text style={[styles.text, {textAlign: 'right'}]}>Restorano ypatumai</Text>
                 </View>
             </View>
             <View style={[{flex: 1, flexDirection: 'row'}]}>
-                <Text style={[styles.text, {textAlign: 'justify'}]}>{props.description}</Text>
+                <Text style={[styles.text, {textAlign: 'justify'}]}>Restorano aprašymas</Text>
             </View>
             </LinearGradient>
         </View>
@@ -31,4 +31,4 @@ function MealDeal(props) {
     )
 }
 
-export default MealDeal;
+export default Restaurants;
